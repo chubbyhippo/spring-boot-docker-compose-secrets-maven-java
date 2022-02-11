@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  spring:
+    image: demo:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+    secrets:
+      - custom-secret
+    environment:
+      SPRING_PROFILES_ACTIVE: docker-stack
+
+secrets:
+  custom-secret:
+    external: true
