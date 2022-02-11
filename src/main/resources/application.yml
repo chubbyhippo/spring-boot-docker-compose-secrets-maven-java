@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: default
+web:
+  secret: secret
+---
+spring:
+  config:
+    activate:
+      on-profile: docker-stack
+web:
+  secret: ${docker-secret-custom-secret}
+docker-secret:
+  bind-path: /run/secrets
